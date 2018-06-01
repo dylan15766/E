@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+    blog:
+        container_name: blog
+        ports:
+                - '8001:8000'
+        build: blog/
+        volumes:
+                - ./blog:/srv
+
+    blog_view:
+        container_name: blog_view
+        ports:
+                - '8002:8000'
+        build: blog_view
+        volumes:
+                - ./blog_view:/srv
+
